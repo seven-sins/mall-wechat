@@ -178,31 +178,33 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .index{
-  margin-bottom: 66px;
+  margin-bottom: 6rem;
 }
 /** 轮播图 */
 .my-swipe{
-  height: 370px;
+  height: 32.3rem;
   img{
     width: 100%; height: 100%;
   }
 }
 /** 每日逛 */
 .everyday-visit{
-  margin: 13px 0 0 0;
+  margin: 1rem 0 0 0;
   img{
     width: 100%;
   }
 }
 .everyday-grid{
   .list-item{
+    padding: 0.5rem;
     .item-img {
       width: 100%;
+      height: 10rem;
     }
     .item-title{
-      font-size: 12px;
+      font-size: 1rem;
       font-weight: bold;
       /** 内容超出一行显示... */
       text-overflow: -o-ellipsis-lastline;
@@ -214,7 +216,7 @@ export default {
       -webkit-box-orient: vertical;
     }
     .item-sub-title{
-      font-size: 11px; color: #aaa;
+      font-size: 1rem; color: #aaa;
       /** 内容超出一行显示... */
       text-overflow: -o-ellipsis-lastline;
       overflow: hidden;
@@ -228,20 +230,21 @@ export default {
 }
 /** 猜你喜欢 */
 .youlike{
-  margin: 13px 0 0 0;
+  margin: 1rem 0 0 0;
   img{
     width: 100%;
   }
 }
 .youlike-grid{
   .list-item{
+    padding: 0.5rem;
     .item-img {
       width: 100%;
     }
     .item-title{
       display: block;
       width: 100%;
-      font-size: 12px;
+      font-size: 1rem;
       /** 内容超出二行显示... */
       text-overflow: -o-ellipsis-lastline;
       overflow: hidden;
@@ -250,13 +253,15 @@ export default {
       -webkit-line-clamp: 2;
       line-clamp: 2;
       -webkit-box-orient: vertical;
-      height: 40px;
-      line-height: 20px;
+      height: 2.6rem;
+      line-height: 1.3rem;
     }
     .item-price{
       display: block;
       width: 100%;
-      font-size: 13px;
+      height: 2rem;
+      line-height: 2rem;
+      font-size: 1.1rem;
       text-align: left;
       color: red;
       font-weight: bold;
@@ -265,8 +270,27 @@ export default {
 }
 /** 底部导航栏 */
 .index-footer{
+  height: 5rem;
   span{
     color: #666;
+  }
+  .van-tabbar-item{
+    height: 5rem;
+  }
+  .van-tabbar-item__icon, .van-tabbar-item__text {
+      font-size: 1rem;
+      width: 100%;
+      height: 100%;
+      line-height: 2;
+      text-align: center;
+      img{
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 2rem auto 0 auto;
+      }
+  }
+  .van-tabbar-item__text{
+    margin-bottom: 1rem;
   }
   .van-tabbar-item--active{
     span{
