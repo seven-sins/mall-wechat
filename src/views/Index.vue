@@ -117,38 +117,6 @@ export default {
         'https://m.360buyimg.com/babel/s750x2750_jfs/t1/142629/35/13364/156594/5fa2c375Ead85379d/3471fae3b10684d4.jpg!q80.dpg',
         'https://m.360buyimg.com/mobilecms/s750x750_jfs/t1/135595/11/9364/150060/5f5616eaEdc919530/e6c1dcbcadb698da.jpg!q80.dpg.webp',
         'https://m.360buyimg.com/babel/s750x750_jfs/t1/148948/39/13565/176128/5fa68c20Eb56624df/c95d28c569129e04.jpg!q80.dpg'
-      ],
-      tabbars: [
-        {
-          name: "home",
-          title: "首页",
-          normal: require("@/assets/images/home_1.png"),
-          active: require("@/assets/images/home_2.png")
-        },
-        {
-          name: "category",
-          title: "分类",
-          normal: require("@/assets/images/category_1.png"),
-          active: require("@/assets/images/category_2.png")
-        },
-        {
-          name: "special",
-          title: "特价",
-          normal: require("@/assets/images/star_1.png"),
-          active: require("@/assets/images/star_2.png")
-        },
-        {
-          name: "cart",
-          title: "购物车",
-          normal: require("@/assets/images/cart_1.png"),
-          active: require("@/assets/images/cart_2.png")
-        },
-        {
-          name: "mine",
-          title: "我的",
-          normal: require("@/assets/images/me_1.png"),
-          active: require("@/assets/images/me_2.png")
-        }
       ]
     };
   },
@@ -159,11 +127,6 @@ export default {
         this.isLoading = false;
         this.count++;
       }, 100);
-    },
-    // 底部导航栏切换
-    tab(index, val) {
-      this.currIndex = index;
-      this.$router.push(val);
     }
   },
   watch: {
@@ -174,7 +137,8 @@ export default {
 
 <style lang="less" scoped>
 .index{
-  margin-bottom: 6rem;
+  padding-bottom: 6rem;
+  box-sizing: border-box;
 }
 /** 轮播图 */
 .my-swipe{
@@ -192,7 +156,7 @@ export default {
 }
 .everyday-grid{
   .list-item{
-    padding: 0.5rem;
+    padding: 0.3rem;
     .item-img {
       width: 100%;
       height: 10rem;
@@ -231,7 +195,7 @@ export default {
 }
 .youlike-grid{
   .list-item{
-    padding: 0.5rem;
+    padding: 0.3rem;
     .item-img {
       width: 100%;
     }

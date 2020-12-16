@@ -59,13 +59,6 @@ export default {
     };
   },
   methods: {
-    onRefresh() {
-      setTimeout(() => {
-        Toast("刷新成功");
-        this.isLoading = false;
-        this.count++;
-      }, 100);
-    },
     // 底部导航栏切换
     tab(index, val) {
       this.currIndex = index;
