@@ -92,30 +92,22 @@
     </van-grid>
 
     <!-- 底部导航栏 -->
-    <van-tabbar v-model="active" class="active_tab index-footer">
-      <van-tabbar-item
-        v-for="(item,index) in tabbars"
-        :key="index"
-        @click="tab(index, item.name)"
-      >
-        <span :class="currIndex == index ? active:''">{{item.title}}</span>
-        <template slot="icon" slot-scope="props">
-          <img :src="props.active ? item.active : item.normal">
-        </template>
-      </van-tabbar-item>
-    </van-tabbar>
+    <FooterNav />
   </div>
 </template>
 
 <script>
 import Vue from "vue";
 import { Lazyload } from "vant";
+import FooterNav from "@/components/FooterNav.vue";
 
 Vue.use(Lazyload);
 
 export default {
   name: "Index",
-  components: {},
+  components: {
+    FooterNav
+  },
   mounted() {},
   data() {
     return {
@@ -171,14 +163,16 @@ export default {
     // 底部导航栏切换
     tab(index, val) {
       this.currIndex = index;
-      // this.$router.push(val);
+      this.$router.push(val);
     }
   },
-  watch: {},
+  watch: {
+
+  }
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .index{
   margin-bottom: 6rem;
 }
@@ -268,35 +262,6 @@ export default {
     }
   }
 }
-/** 底部导航栏 */
-.index-footer{
-  height: 5rem;
-  span{
-    color: #666;
-  }
-  .van-tabbar-item{
-    height: 5rem;
-  }
-  .van-tabbar-item__icon, .van-tabbar-item__text {
-      font-size: 1rem;
-      width: 100%;
-      height: 100%;
-      line-height: 2;
-      text-align: center;
-      img{
-        width: 1.5rem;
-        height: 1.5rem;
-        margin: 2rem auto 0 auto;
-      }
-  }
-  .van-tabbar-item__text{
-    margin-bottom: 1rem;
-  }
-  .van-tabbar-item--active{
-    span{
-      color: #d00;
-    }
-  }
-}
+
 
 </style>
