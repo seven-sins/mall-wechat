@@ -8,6 +8,10 @@ const routes = [
   {
     path: '/',
     component: Index
+  },
+  {
+    path: '/detail',
+    component: resove => require(["@/views/goods/GoodsDetail.vue"], resove)
   }
 ]
 

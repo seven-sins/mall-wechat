@@ -72,29 +72,8 @@ export default {
 <style lang="less">
 /** 底部导航栏 */
 .index-footer{
-  height: 188px;
   span{
     color: #666;
-  }
-  .van-tabbar-item{
-    height: 188px;
-  }
-  .van-tabbar-item__icon, .van-tabbar-item__text {
-      width: 100%;
-      height: 100%;
-      line-height: 2;
-      text-align: center;
-      img{
-        width: 1.5rem;
-        height: 1.5rem;
-        margin: 2rem auto 0 auto;
-      }
-      span{
-        font-size: 1rem;
-      }
-  }
-  .van-tabbar-item__text{
-    margin-bottom: 1rem;
   }
   .van-tabbar-item--active{
     span{

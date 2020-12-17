@@ -38,10 +38,10 @@ module.exports = {
         loaderOptions: {
             postcss: {
                 plugins: [
-                    require('postcss-pxtorem')({
-                        rootValue : 37.5, // 换算的基数
-                        propList   : ['*'],
-                    }),
+                    // require('postcss-pxtorem')({
+                    //     rootValue: 37.5, // 换算的基数
+                    //     propList: ['*'],
+                    // }),
                     require('autoprefixer')({
                         overrideBrowserslist: [
                             "Android 4.1",
