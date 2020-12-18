@@ -1,5 +1,5 @@
 <template>
-    <div class="detail-container">
+    <div class="goods-info-container">
         <!-- 顶部轮播图 -->
         <van-swipe class="my-swipe" :autoplay="6000" @change="onChange">
             <van-swipe-item v-for="(image, index) in images" :key="index">
@@ -92,36 +92,19 @@
             </div>
         </div>
 
-        <!-- 详情 -->
-        <van-tabs v-model="active" scrollspy sticky class="detail-tabs" id="top">
-            <van-tab title="商品">
-                <div style="height: 500px;">1</div>
-            </van-tab>
-            <van-tab title="评价">
-                <GoodsComment />
-            </van-tab>
-            <van-tab title="详情">
-                <div style="height: 500px;">3</div>
-            </van-tab>
-            <van-tab title="推荐">
-                <div style="height: 500px;">4</div>
-            </van-tab>
-        </van-tabs>
-
     </div>
 </template>
 
 <script>
 import Vue from "vue";
 import { Lazyload } from "vant";
-import GoodsComment from "./GoodsComment";
 
 Vue.use(Lazyload);
 
 export default {
   name: "GoodsDetail",
   components: {
-      GoodsComment
+      
   },
   data() {
     return {
@@ -137,37 +120,11 @@ export default {
     }
   },
   mounted() {
-      window.addEventListener('scroll', this.scroll);
-  },
-  destroyed(){
-      window.removeEventListener('scroll', this.scroll)
+      
   },
   methods: {
     onChange(index){
         this.current = index;
-    },
-    scroll(){
-        let obj = document.getElementById("top");
-        let targetTop = obj.offsetTop;
-        if(this.getScrollTop() >= targetTop){
-            if (obj.className.match(new RegExp('(\\s+|^)' + this.className + '(\\s+|$)'))){
-                obj.className = obj.className.replace(new RegExp('(\\s+|^)' + this.className + '(\\s+|$)'), '');
-            }
-        } else{
-            if (!obj.className.match(new RegExp('(\\s+|^)' + this.className + '(\\s+|$)'))){
-                obj.className += ' ' + this.className;
-            }
-        }
-    },
-    getScrollTop() {
-        let scroll_top = 0;
-        if (document.documentElement && document.documentElement.scrollTop) {
-            scroll_top = document.documentElement.scrollTop;
-        }
-        else if (document.body) {
-            scroll_top = document.body.scrollTop;
-        }
-        return scroll_top;
     }
   },
   watch: {
@@ -177,10 +134,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.detail-container{
-    background: #eee;
-    padding-bottom: 2rem;
-}
 .my-swipe{
   height: 32.3rem;
   img{

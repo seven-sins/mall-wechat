@@ -35,5 +35,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+.goods-comment{
+    height: 500px;
+}
 </style>
