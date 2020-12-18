@@ -49,7 +49,11 @@ export default {
   methods: {
     scroll(){
         let obj = document.getElementById("top");
-        let targetTop = document.getElementById("targetTop").offsetTop;
+        let target = document.getElementById("targetTop");
+        if(!obj || !target){
+            return;
+        }
+        let targetTop = target.offsetTop;
         if(this.getScrollTop() >= targetTop){
             if (obj.className.match(new RegExp('(\\s+|^)' + this.className + '(\\s+|$)'))){
                 obj.className = obj.className.replace(new RegExp('(\\s+|^)' + this.className + '(\\s+|$)'), '');
